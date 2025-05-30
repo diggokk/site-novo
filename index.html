@@ -7,10 +7,15 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="container" role="main" aria-label="Contador de Cliques">
-    <div class="count" id="countDisplay" aria-live="polite" aria-atomic="true">0</div>
-    <button id="clickButton" aria-describedby="countDisplay">Clique aqui!</button>
-  </div>
+  <main class="container">
+    <h1>Desafio: Contador de Cliques</h1>
+    <p class="subtitulo">Clique no botão e veja o número de cliques aumentar!</p>
+    
+    <div class="contador">
+      <div id="countDisplay" class="numero">0</div>
+      <button id="clickButton">Clique aqui!</button>
+    </div>
+  </main>
 
   <script src="script.js"></script>
 </body>

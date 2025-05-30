@@ -1,4 +1,4 @@
-(function(){
+(function() {
   const countDisplay = document.getElementById('countDisplay');
   const clickButton = document.getElementById('clickButton');
   let count = 0;
