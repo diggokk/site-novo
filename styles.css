@@ -1,76 +1,105 @@
+/* CSS Variables for gradient and colors */
+:root {
+  --purple-gradient-light: #ede9fe;
+  --purple-gradient-dark: #c4b5fd;
+  --text-color: #4b17a1;
+  --button-bg: #7c3aed;
+  --button-bg-hover: #5b21b6;
+  --button-text: #fff;
+}
+
+/* Reset and base styles */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-  height: 100vh;
-  background: url('https://unsplash.com/pt-br/fotografias/um-objeto-laranja-muito-brilhante-no-meio-do-ceu-noturno--QsaSTNCncE') no-repeat center center fixed;
-  background-size: cover;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, var(--purple-gradient-light) 0%, var(--purple-gradient-dark) 100%);
+  color: var(--text-color);
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
-  color: white;
+  justify-content: center;
+  padding: 1rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.25);
+  padding: 3rem 4rem;
+  max-width: 320px;
+  width: 100%;
   text-align: center;
 }
 
-
-.container {
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-  max-width: 400px;
-  width: 100%;
-}
-
 h1 {
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+  user-select: none;
 }
 
-.subtitulo {
-  font-size: 1rem;
+#count {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--text-color);
   margin-bottom: 2rem;
-  color: #f3e5f5;
-}
-
-.contador {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
-.numero {
-  font-size: 4rem;
-  font-weight: bold;
-  color: #ffffff;
+  font-variant-numeric: tabular-nums;
+  user-select: none;
 }
 
 button {
-  font-weight: 600;
-  font-size: 1rem;
-  padding: 0.75rem 2.5rem;
-  border-radius: 9999px;
-  border: none;
-  background: linear-gradient(135deg, #7e57c2, #ab47bc);
-  color: white;
+  all: unset;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(123, 31, 162, 0.7);
-  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.25s ease;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: 1rem 2.5rem;
+  border-radius: 9999px;
+  box-shadow: 0 5px 15px rgba(124, 58, 237, 0.5);
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease,
+    box-shadow 0.3s ease;
+  user-select: none;
 }
-
-button:hover {
-  background: linear-gradient(135deg, #9c27b0, #e040fb);
-  box-shadow: 0 6px 25px rgba(156, 39, 176, 0.85);
+button:hover,
+button:focus-visible {
+  background-color: var(--button-bg-hover);
   transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(91, 33, 182, 0.7);
+  outline-offset: 4px;
+  outline-color: #a78bfa;
+  outline-style: solid;
 }
 
 button:active {
   transform: scale(0.95);
-  box-shadow: 0 2px 10px rgba(156, 39, 176, 0.7);
+}
+
+/* Responsive adjustments */
+@media (max-width: 400px) {
+  .container {
+    padding: 2rem 2.5rem;
+    max-width: 280px;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  #count {
+    font-size: 3rem;
+  }
+  button {
+    padding: 0.85rem 2rem;
+    font-size: 1.1rem;
+  }
 }
 
